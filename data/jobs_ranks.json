@@ -1,0 +1,26 @@
+{
+  "Fastest Growing Jobs": [
+    {"Rank": 1, "Job Title": "AI and Machine Learning Specialists"},
+    {"Rank": 2, "Job Title": "Sustainability Specialists"},
+    {"Rank": 3, "Job Title": "Business Intelligence Analysts"},
+    {"Rank": 4, "Job Title": "Information Security Analysts"},
+    {"Rank": 5, "Job Title": "Fintech Engineers"},
+    {"Rank": 6, "Job Title": "Data Analysts and Scientists"},
+    {"Rank": 7, "Job Title": "Robotics Engineers"},
+    {"Rank": 8, "Job Title": "Big Data Specialists"},
+    {"Rank": 9, "Job Title": "Agricultural Equipment Operators"},
+    {"Rank": 10, "Job Title": "Digital Transformation Specialists"}
+  ],
+  "Fastest Declining Jobs": [
+    {"Rank": 1, "Job Title": "Bank Tellers and Related Clerks"},
+    {"Rank": 2, "Job Title": "Postal Service Clerks"},
+    {"Rank": 3, "Job Title": "Cashiers and ticket Clerks"},
+    {"Rank": 4, "Job Title": "Data Entry Clerks"},
+    {"Rank": 5, "Job Title": "Administrative and Executive Secretaries"},
+    {"Rank": 6, "Job Title": "Material-Recording and Stock-Keeping Clerks"},
+    {"Rank": 7, "Job Title": "Accounting, Bookkeeping and Payroll Clerks"},
+    {"Rank": 8, "Job Title": "Legislators and Officials"},
+    {"Rank": 9, "Job Title": "Statistical, Finance and Insurance Clerks"},
+    {"Rank": 10, "Job Title": "Door-To-Door Sales Workers, News and Street Vendors, and Related Workers"}
+  ]
+}
