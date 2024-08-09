@@ -1,4 +1,3 @@
-import pandas as pd
 import plotly.express as px
 import plotly.io as pio
 import os
@@ -7,8 +6,11 @@ from utils import read_and_parse_dat_automation
 # Set the default theme to dark mode and specify the color palette
 pio.templates.default = "plotly_dark"
 
-# Define a custom color palette
-custom_palette = px.colors.qualitative.Dark24
+# Load Montserrat font from Google Fonts
+pio.kaleido.scope.default_layout["font"]["family"] = "Montserrat"
+
+# Define a custom color palette with a smoother transition
+custom_palette = px.colors.sequential.Inferno
 
 # Load the data
 data_path = os.path.join('..', 'data', 'export-2024-08-09T08_59_30.984Z.csv')
@@ -25,13 +27,23 @@ def plot_automation_impact(df):
 
     # Customize the layout for a more professional look
     fig.update_layout(
-        font=dict(family="Arial, sans-serif", size=14, color="white"),
+        font=dict(family="Montserrat, sans-serif", size=14, color="white"),
         title=dict(font=dict(size=24, color="white")),
         paper_bgcolor='#1f1f1f',  # Dark background
         plot_bgcolor='#1f1f1f',    # Dark grid background
         xaxis=dict(title='Country', showgrid=False),
         yaxis=dict(title='Risk of Automation (%)', showgrid=False),
         margin=dict(l=40, r=40, t=80, b=40),
+        coloraxis_colorbar=dict(
+            title="Risk of Automation",
+            titlefont=dict(size=14, color="white"),
+            tickfont=dict(size=12, color="white"),
+            lenmode="fraction",
+            len=0.7,
+            thickness=15,
+            outlinewidth=0,
+            bgcolor='#1f1f1f'
+        )
     )
 
     # Save the graph as an HTML file
