@@ -33,12 +33,21 @@ def plot_automation_impact(df):
 
     # Customize the layout for a more professional look
     fig.update_layout(
+        title="Fastest Growing vs. Fastest Declining Jobs (2023-2027)",
+        title_font=dict(family="Montserrat, sans-serif", size=24, color="white"),
         font=dict(family="Montserrat, sans-serif", size=14, color="white"),
-        title=dict(font=dict(size=24, color="white")),
+        xaxis_title="Rank (Positive for Growing, Negative for Declining)",
+        yaxis_title="Job Title",
         paper_bgcolor='#1f1f1f',  # Dark background
         plot_bgcolor='#1f1f1f',  # Dark grid background
-        xaxis=dict(title='Country', showgrid=False),
-        yaxis=dict(title='Risk of Automation (%)', showgrid=False),
+        xaxis=dict(title='Country', showgrid=False,
+                   title_font=dict(family="Montserrat, sans-serif", size=16),
+                   tickfont=dict(family="Montserrat, sans-serif", size=12)
+                   ),
+        yaxis=dict(title='Risk of Automation (%)', showgrid=False,
+                   title_font=dict(family="Montserrat, sans-serif", size=16),
+                   tickfont=dict(family="Montserrat, sans-serif", size=12)
+                   ),
         margin=dict(l=40, r=40, t=80, b=40),
         coloraxis_colorbar=dict(
             title="Risk of Automation",
@@ -113,8 +122,18 @@ def create_jobs_chart(data, output_dir='../graphs', output_filename='jobs_ranks.
         barmode='overlay',
         height=800,
         showlegend=False,
-        xaxis=dict(tickmode='linear', dtick=1),
-        yaxis=dict(autorange="reversed")  # Ensures the growing jobs are on top
+        xaxis=dict(
+            tickmode='linear',
+            dtick=1,
+            title_font=dict(family="Montserrat, sans-serif", size=16),
+            tickfont=dict(family="Montserrat, sans-serif", size=12)
+        ),
+        yaxis=dict(
+            autorange="reversed",
+            title_font=dict(family="Montserrat, sans-serif", size=16),
+            tickfont=dict(family="Montserrat, sans-serif", size=12)
+        )
+
     )
 
     # Ensure the output directory exists

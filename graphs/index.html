@@ -3,32 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OECD DataViz - Impact of Automation on Jobs</title>
+    <title>The Digital Shift: How Technology is Reshaping Employment</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
     <div id="particles-js"></div>
 
+    <!-- Section 1: Introduction -->
     <div class="container">
-        <h1><i class="fas fa-robot"></i> Impact of AI on Job Automation by Country</h1>
-        <div class="graph-container">
-            <!-- Embed the first Plotly graph here -->
-            <iframe src="automation_impact.html" width="100%" height="600px" frameborder="0"></iframe>
-        </div>
+        <section id="introduction" class="section">
+            <h1><i class="fas fa-robot"></i> The Digital Shift: How Technology is Reshaping Employment</h1>
+            <h2 class="subtitle">Exploring the Impact of Automation, AI, and Digitalization on the Global Job Market</h2>
+            <p class="intro-text">The rapid pace of digital transformation is reshaping the global job market. Automation, AI, and digitalization are driving significant changes in employment, creating both opportunities and challenges across various sectors.</p>
+        </section>
     </div>
 
+    <!-- Section 2: Key Data Visualization -->
     <div class="container">
-        <h1><i class="fas fa-chart-bar"></i> Fastest Growing vs. Fastest Declining Jobs</h1>
-        <div class="graph-container">
-            <!-- Embed the second Plotly graph here -->
-            <iframe src="jobs_ranks.html" width="100%" height="800px" frameborder="0"></iframe>
-        </div>
+        <section id="key-data" class="section">
+            <h2><i class="fas fa-chart-bar"></i> Key Data Visualization</h2>
+
+            <!-- Visual 2: New Job Creation (Job Ranks Graph) -->
+            <div class="graph-container">
+                <h3>New Job Creation</h3>
+                <iframe id="job-ranks-iframe" src="jobs_ranks.html" width="100%" height="850px" frameborder="0"></iframe>
+            </div>
+
+            <!-- Visual 3: Skills Evolution -->
+            <div class="visual-container">
+                <h3>Skills Evolution</h3>
+                <p>Illustrating the shift in required skills from traditional roles to digital skills.</p>
+                <div class="timeline">
+                    <!-- Timeline or Flowchart visualization goes here -->
+                    <p><i class="fas fa-arrow-right"></i> From traditional skills to digital expertise.</p>
+                </div>
+            </div>
+        </section>
     </div>
 
-    <div class="info">
-        <p>Powered by <i class="fas fa-brain"></i> AI &amp; <i class="fas fa-chart-line"></i> Data Visualization</p>
+    <!-- Section 3: Country Comparisons (Automation Impact) -->
+    <div class="container">
+        <section id="country-comparisons" class="section">
+            <h2><i class="fas fa-globe"></i> Country Comparisons</h2>
+            <div class="graph-container">
+                <h3>How Different Countries Are Handling Digital Transformation</h3>
+                <iframe src="automation_impact.html" width="100%" height="600px" frameborder="0"></iframe>
+            </div>
+        </section>
+    </div>
+
+    <!-- Section 4: Conclusion -->
+    <div class="container">
+        <section id="conclusion" class="section">
+            <h2><i class="fas fa-lightbulb"></i> Conclusion</h2>
+            <p class="conclusion-text">The digital shift is a double-edged sword, offering both opportunities and challenges. To navigate this transition successfully, it is crucial to invest in upskilling and adapt proactive policies that support innovation and workforce resilience.</p>
+            <p class="call-to-action"><strong>Call to Action:</strong> Embrace innovation, support policy adaptation, and ensure the workforce is prepared for the digital future.</p>
+        </section>
     </div>
 
     <!-- Include the external JS file for particles and other styling scripts -->
