@@ -80,14 +80,16 @@ h2 {
 .graph-container {
     width: 100%;
     max-width: 1000px;
-    border: 2px solid #333;
-    border-radius: 8px;
-    padding: 20px;
+    border: 0.125rem solid #333;
+    border-radius: 0.5rem;
+    padding: 0.625rem;
     background-color: #262626;
-    margin-bottom: 40px;
+    margin-bottom: 2.5rem;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /* Add depth to the graph container */
     margin-left: auto;
     margin-right: auto;
+    box-sizing: border-box; /* Ensure padding does not affect width */
+    overflow: hidden; /* Prevent overflow issues */
 }
 
 .visual-container {
@@ -112,4 +114,51 @@ h2 {
 
 .info i {
     color: #F39C12; /* Custom color for icons */
+}
+
+
+/* Mobile Styles */
+
+@media only screen and (max-width: 768px) {
+    .container {
+        width: 100%; /* Full width on mobile */
+        padding: 10px; /* Less padding */
+    }
+
+    h1 {
+        font-size: 2em; /* Reduce font size on mobile */
+        margin-bottom: 15px;
+    }
+
+    h2 {
+        font-size: 1.5em; /* Reduce font size on mobile */
+        margin-bottom: 20px;
+    }
+
+    .graph-container {
+        max-width: 100%; /* Allow the graph container to be full width */
+        padding: 10px; /* Less padding on mobile */
+    }
+
+    .section {
+        padding: 20px; /* Less padding on mobile */
+        margin-bottom: 20px; /* Less margin between sections */
+    }
+
+    .intro-text, .conclusion-text, .call-to-action {
+        font-size: 1em; /* Smaller font on mobile */
+        line-height: 1.4em;
+    }
+
+    .call-to-action {
+        font-size: 1.2em;
+    }
+
+    frame {
+    width: 100%; /* Full width of the container */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 100%; /* Ensure iframe does not exceed container width */
+    aspect-ratio: 16/9; /* Maintain a 16:9 aspect ratio */
+    border: none; /* Remove any border */
+    }
 }

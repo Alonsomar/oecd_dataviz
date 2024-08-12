@@ -38,8 +38,8 @@ def plot_automation_impact(df):
         font=dict(family="Montserrat, sans-serif", size=14, color="white"),
         xaxis_title="Rank (Positive for Growing, Negative for Declining)",
         yaxis_title="Job Title",
-        paper_bgcolor='#1f1f1f',  # Dark background
-        plot_bgcolor='#1f1f1f',  # Dark grid background
+        paper_bgcolor='rgba(0,0,0,0)',  # Transparent background
+        plot_bgcolor='rgba(0,0,0,0)',  # Transparent grid background
         xaxis=dict(title='Country', showgrid=False,
                    title_font=dict(family="Montserrat, sans-serif", size=16),
                    tickfont=dict(family="Montserrat, sans-serif", size=12)
@@ -65,6 +65,43 @@ def plot_automation_impact(df):
     output_path = os.path.join('..', 'graphs', 'automation_impact.html')
     fig.write_html(output_path, include_plotlyjs='cdn', full_html=False)  # Save without the full HTML wrapper
     print(f'Graph saved to {output_path}')
+
+
+def plot_automation_impact_bar(df):
+    # Define a custom color palette that suits the dark background
+    custom_palette = px.colors.sequential.Blues
+
+    fig = px.bar(df, x='Country', y='Risk of Automation',
+                 hover_name='Country', title='Risk of Automation by Country',
+                 color='Risk of Automation',
+                 color_continuous_scale=custom_palette)
+
+    # Customize the layout for a more professional look
+    fig.update_layout(
+        title="Risk of Automation by Country",
+        title_font=dict(family="Montserrat, sans-serif", size=24, color="white"),
+        font=dict(family="Montserrat, sans-serif", size=14, color="white"),
+        xaxis_title="Country",
+        yaxis_title="Risk of Automation (%)",
+        paper_bgcolor='rgba(0,0,0,0)',  # Transparent background
+        plot_bgcolor='rgba(0,0,0,0)',  # Transparent grid background
+        xaxis=dict(title='Country', showgrid=False,
+                   title_font=dict(family="Montserrat, sans-serif", size=16),
+                   tickfont=dict(family="Montserrat, sans-serif", size=12)
+                   ),
+        yaxis=dict(title='Risk of Automation (%)', showgrid=False,
+                   title_font=dict(family="Montserrat, sans-serif", size=16),
+                   tickfont=dict(family="Montserrat, sans-serif", size=12)
+                   ),
+        margin=dict(l=40, r=40, t=80, b=40),
+        showlegend=False,  # Remove the color legend
+        coloraxis_showscale = False  # Hide the color legend
+    )
+
+    # Save the graph as an HTML file
+    output_path = os.path.join('..', 'graphs', 'automation_impact_bar.html')
+    fig.write_html(output_path, include_plotlyjs='cdn', full_html=False)  # Save without the full HTML wrapper
+    print(f'Bar chart saved to {output_path}')
 
 
 def create_jobs_chart(data, output_dir='../graphs', output_filename='jobs_ranks.html'):
@@ -117,8 +154,8 @@ def create_jobs_chart(data, output_dir='../graphs', output_filename='jobs_ranks.
         font=dict(family="Montserrat, sans-serif", size=14, color="white"),
         xaxis_title="Rank (Positive for Growing, Negative for Declining)",
         yaxis_title="Job Title",
-        paper_bgcolor='#1f1f1f',  # Dark background
-        plot_bgcolor='#1f1f1f',  # Dark grid background
+        paper_bgcolor='rgba(0,0,0,0)',  # Transparent background
+        plot_bgcolor='rgba(0,0,0,0)',  # Transparent grid background
         barmode='overlay',
         height=800,
         showlegend=False,
@@ -149,4 +186,5 @@ def create_jobs_chart(data, output_dir='../graphs', output_filename='jobs_ranks.
 
 if __name__ == "__main__":
     plot_automation_impact(df)
+    plot_automation_impact_bar(df)
     create_jobs_chart(data_ranks_json)
