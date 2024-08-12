@@ -116,6 +116,14 @@ h2 {
     color: #F39C12; /* Custom color for icons */
 }
 
+/* style.css */
+.footnote {
+    font-size: 12px;
+    color: #888;
+    text-align: center;
+    margin-top: 10px;
+    font-style: italic;  /* Optional: makes the text italic */
+}
 
 /* Mobile Styles */
 
