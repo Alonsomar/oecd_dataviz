@@ -68,13 +68,23 @@ def plot_automation_impact(df):
 
 
 def plot_automation_impact_bar(df):
-    # Define a custom color palette that suits the dark background
+    # Define a custom color palette with two interpolated colors
     custom_palette = px.colors.sequential.Blues
 
-    fig = px.bar(df, x='Country', y='Risk of Automation',
-                 hover_name='Country', title='Risk of Automation by Country',
-                 color='Risk of Automation',
-                 color_continuous_scale=custom_palette)
+    fig = go.Figure(
+        data=[
+            go.Bar(
+                x=df['Country'],
+                y=df['Risk of Automation'],
+                marker=dict(color=df['Risk of Automation'], coloraxis="coloraxis"),
+                name="Risk of Automation"
+            )
+        ],
+        layout=dict(
+            barcornerradius=5,  # Adjust the corner radius of the bars
+            coloraxis=dict(colorscale=custom_palette, showscale=False)  # Hide color legend and use custom palette
+        )
+    )
 
     # Customize the layout for a more professional look
     fig.update_layout(
@@ -94,8 +104,6 @@ def plot_automation_impact_bar(df):
                    tickfont=dict(family="Montserrat, sans-serif", size=12)
                    ),
         margin=dict(l=40, r=40, t=80, b=40),
-        showlegend=False,  # Remove the color legend
-        coloraxis_showscale = False  # Hide the color legend
     )
 
     # Save the graph as an HTML file
@@ -182,6 +190,7 @@ def create_jobs_chart(data, output_dir='../graphs', output_filename='jobs_ranks.
     # Save the plot as an HTML file
     fig.write_html(output_path, include_plotlyjs='cdn', full_html=False)  # Save without the full HTML wrapper
     print(f'Graph saved to {output_path}')
+
 
 
 if __name__ == "__main__":
